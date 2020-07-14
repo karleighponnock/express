@@ -1,14 +1,17 @@
 var path = require('path');
+var express = require("express");
+const app = express();
 
 //exports files to server file reqirements
-module.exports = function (app) {
+module.exports = function() {
 
-    app.GET("/api/notes", function (req, res) {
+    app.get("/api/notes", function (req, res) {
+        console.log("hello world")
         res.json(req.body)
         return res.json(notes);
     });
 
-    app.POST("/api/notes", function (req, res) {
+    app.post("/api/notes", function (req, res) {
         var newNote = req.body
         notes.push(newNote)
         res.json(newNote)
@@ -16,7 +19,7 @@ module.exports = function (app) {
         return res.json(notes);
     });
 
-    app.DELETE("/api/notes", function (req, res) {
+    app.delete("/api/notes", function (req, res) {
 
 
         res.json(req.body)

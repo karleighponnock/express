@@ -12,6 +12,7 @@ app.use(express.static("public"));
 app.use(htmlroutes);
 app.use(apiroutes);
 
+
 app.post("/api/notes", (req, res) => {
 
 const noteObj = req.body;
