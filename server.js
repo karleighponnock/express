@@ -13,13 +13,11 @@ app.use(express.static("public"));
 // app.use(apiroutes);
 
 app.get("/notes", function (req, res) {
-    console.log("hello!!!")
     res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
 
 app.post("/api/notes", (req, res) => {
-console.log("hello world")
 const noteObj = req.body;
 console.log(noteObj)
 noteObj.id = 3;

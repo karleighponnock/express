@@ -22,8 +22,12 @@ module.exports = function() {
     });
 
     app.delete("/api/notes", function (req, res) {
-        handleNoteDelete()
-        res.json(req.body)
-        return res.json(notes);
+        const note = notes.value;
+    window.localStorage.removeItem(note);
+    editor.value = '';
+    for (let i = 0; i < notes.length; i++) {
+        const option = notes[i];
+        if (option.value === note) {
+            notes.removeChild(option);
     });
 }
